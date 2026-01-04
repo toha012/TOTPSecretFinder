@@ -12,7 +12,7 @@
 #define RAND_SIZE 0x1000000
 #define RAND_SIZE_m_SECRET_LENGTH (RAND_SIZE - SECRET_LENGTH)
 
-#define STEP_START {{STEP_START}}
+#define STEP_START 58923720
 #define STEP_A_DAY 2880
 #define STEP_END (STEP_START + STEP_A_DAY)
 #define ALL_SECRET_LENGTH (STEP_A_DAY * SECRET_LENGTH)
@@ -146,7 +146,7 @@ int main() {
         }
     }
 
-    fp = fopen("{{OUTPUT_FILE}}", "wb");
+    fp = fopen("output.bin", "wb");
     fwrite(all_secret, 1, ALL_SECRET_LENGTH, fp);
     fclose(fp);
 

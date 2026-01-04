@@ -42,6 +42,7 @@ def main(day: datetime.datetime):
     with open(PRECOMPUTED_INDEX_FILE, 'r+') as f:
         index_json = json.loads(f.read())
         index_json['dates'].append(DAY)
+        index_json['dates'].sort()
         f.seek(0)
         f.write(json.dumps(index_json, indent=4))
 
